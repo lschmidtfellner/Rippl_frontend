@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
+
+//components
+import Nav from './components/Nav'
+import PopularityBar from './components/PopularityBar'
+import SongInput from './components/SongInput'
+
+//pages
+import Landing from './pages/Landing'
+import Results from './pages/Results'
+import Input from './pages/Input'
+
+//dependencies
+import { Route, Routes } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import * as dotenv from 'dotenv'
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/input" element={<Input />} />
+        <Route path="/results" element={<Results />} />
+      </Routes>
+    </>
+  )
 }
 
-export default App;
+export default App
