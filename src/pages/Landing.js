@@ -5,7 +5,7 @@ function Landing() {
   return (
     <div className="landing">
       <h1>GET RECCOMENDATIONS</h1>
-      <h3>"(from Spotify)"</h3>
+      <h3>(from Spotify)</h3>
       <Link to="/input">
         <button className="get-started">GET STARTED</button>
       </Link>

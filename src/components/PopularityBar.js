@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import '../css/PopularityBar.css'
 
-function PopularityBar() {
-  const [popularity, setPopularity] = useState(20)
+function PopularityBar({popularity, setPopularity}) {
 
   const handleSliderChange = (event) => {
     setPopularity(event.target.value)

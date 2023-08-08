@@ -3,8 +3,6 @@ import './App.css'
 
 //components
 import Nav from './components/Nav'
-import PopularityBar from './components/PopularityBar'
-import SongInput from './components/SongInput'
 
 //pages
 import Landing from './pages/Landing'
@@ -13,18 +11,18 @@ import Input from './pages/Input'
 
 //dependencies
 import { Route, Routes } from 'react-router-dom'
-import React, { useContext, useState } from 'react'
-import * as dotenv from 'dotenv'
+import React, { useState } from 'react'
 
 
 function App() {
+  const [recommendations, setRecommendations] = useState([]);
   
   return (
     <>
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/input" element={<Input />} />
+        <Route path="/input" element={<Input recommendations={recommendations} setRecommendations={setRecommendations} />} />
         <Route path="/results" element={<Results />} />
       </Routes>
     </>
