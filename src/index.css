@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import url('https://use.typekit.net/bxd0eom.css');
+
 
 body {
   margin: 0;
