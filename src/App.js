@@ -18,14 +18,14 @@ function App() {
   const [recommendations, setRecommendations] = useState([]);
   
   return (
-    <>
+    <div className='bg-green-500 min-h-screen px-5 lg:px-20 py-2'>
       <Nav />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/input" element={<Input recommendations={recommendations} setRecommendations={setRecommendations} />} />
         <Route path="/results" element={<Results recommendations={recommendations} setRecommendations={setRecommendations} />} />
       </Routes>
-    </>
+    </div>
   )
 }
 
