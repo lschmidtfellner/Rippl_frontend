@@ -26,10 +26,10 @@ function Input({ recommendations, setRecommendations }) {
     }
   }
 
-  const getRecs = () => {
-    console.log(song1, artist1, song2, artist2, song3, artist3)
-    Promise.all(
-      [
+  const getRecs = async () => {
+    try {
+      console.log(song1, artist1, song2, artist2, song3, artist3);
+      const results = await Promise.all([
         song1 && artist1
           ? api.get(`/search?artist=${artist1}&song=${song1}`)
           : null,
@@ -38,24 +38,25 @@ function Input({ recommendations, setRecommendations }) {
           : null,
         song3 && artist3
           ? api.get(`/search?artist=${artist3}&song=${song3}`)
-          : null
-      ].filter(Boolean)
-    ) // Remove null promises
-      .then((results) => {
-        console.log(results)
-        const seedTracks = results.map((item) => item.data.spotify_id).join(',')
-        console.log(seedTracks)
-        return api.post(`https://spotify-rec-backend.herokuapp.com/${userId}/recommendations?seed_tracks=${seedTracks}&max_popularity=${popularity}`)
-      })
-      .then ((response) => {
-        setRecommendations(response.data.map((item) => item.data))
-        console.log(recommendations)
-        navigate('/results')
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
-  }
+          : null,
+      ].filter(Boolean)); // Remove null promises
+  
+      console.log(results);
+      const seedTracks = results.map((item) => item.data.spotify_id).join(',');
+      console.log(seedTracks);
+      
+      const response = await api.post(`/${userId}/recommendations?seed_tracks=${seedTracks}&max_popularity=${popularity}`);
+      setRecommendations(response.data);
+      console.log(response.data)
+  
+      // Navigate only if recommendations array is populated
+      if (response.data.length > 0) {
+        navigate('/results');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <>

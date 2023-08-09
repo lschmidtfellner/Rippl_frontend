@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/input" element={<Input recommendations={recommendations} setRecommendations={setRecommendations} />} />
-        <Route path="/results" element={<Results />} />
+        <Route path="/results" element={<Results recommendations={recommendations} setRecommendations={setRecommendations} />} />
       </Routes>
     </>
   )
