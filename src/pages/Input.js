@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
-import '../css/PopularityBar.css'
+import '../styles/PopularityBar.css'
 import { useNavigate } from 'react-router-dom';
 
 function Input({ recommendations, setRecommendations }) {
@@ -39,7 +39,7 @@ function Input({ recommendations, setRecommendations }) {
         song3 && artist3
           ? api.get(`/search?artist=${artist3}&song=${song3}`)
           : null,
-      ].filter(Boolean)); // Remove null promises
+      ].filter(Boolean));
   
       console.log(results);
       const seedTracks = results.map((item) => item.data.spotify_id).join(',');

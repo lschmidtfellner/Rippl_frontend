@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../css/PopularityBar.css'
+import '../styles/PopularityBar.css'
 
 function PopularityBar({popularity, setPopularity}) {
 
