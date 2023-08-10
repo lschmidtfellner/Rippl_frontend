@@ -61,7 +61,7 @@ function Input({ recommendations, setRecommendations }) {
 
   return (
     <div className='pt-20'>
-      <h1 className='font-proxima font-bold text-7xl mt-8'>ADD SONGS</h1>
+      <h2 className='font-proxima font-bold text-5xl mt-8'>ADD <br/>SONGS</h2>
       <h3 className='font-semi font-proxima text-xl'>(up to 3)</h3>
       {songCount >= 1 && (
         <SongInput
@@ -93,16 +93,17 @@ function Input({ recommendations, setRecommendations }) {
         <img src={addBtn}/>
         </button>}
       <div className="slidecontainer">
+      <h2 className='font-proxima font-bold text-5xl mt-16 mb-8'>SET <br/>POPULARITY</h2>
       <input 
         type="range" 
-        min="1" 
+        min="15" 
         max="100" 
         value={popularity} 
         onChange={handleSliderChange} 
         className="slider" 
-        id="myRange"
+        id="pop-slider"
       />
-      <p className='pop-quotient'>Popularity: {popularity}</p>
+      <p className='pop-quotient'>{popularity}</p>
     </div>
       <button className="get-recs-btn" onClick={getRecs}>
         Get Recommendations

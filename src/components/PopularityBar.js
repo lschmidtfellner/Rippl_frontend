@@ -11,7 +11,7 @@ function PopularityBar({popularity, setPopularity}) {
     <div className="slidecontainer">
       <input 
         type="range" 
-        min="1" 
+        min="15" 
         max="100" 
         value={popularity} 
         onChange={handleSliderChange} 
