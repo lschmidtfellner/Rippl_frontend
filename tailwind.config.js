@@ -1,22 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
-  "./src/**/*.{js,jsx,ts,tsx}",
-];
-export const theme = {
-  extend: {
-    fontFamily: {
-      'forma-djr-micro': ['forma-djr-micro', 'sans-serif']
-    },
-    fontWeight: {
-      'regular': 400,
-      'medium': 500,
-      'bold' : 700,
-      'extra-bold': 800
-    },
-    fontStyle: {
-      'normal': 'normal',
-      'italic': 'italic'
+
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        'proxima': ['proxima-nova', 'sans-serif']
+      },
+      fontWeight: {
+        'regular': 400,
+        'semi': 600,
+        'bold': 700,
+        'extra-bold': 800
+      },
+      fontStyle: {
+        'normal': 'normal',
+        'italic': 'italic'
+      }
     }
   },
-};
-export const plugins = [];
+  plugins: [],
+}

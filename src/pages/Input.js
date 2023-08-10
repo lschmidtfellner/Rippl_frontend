@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
 import '../styles/PopularityBar.css'
+import addBtn from '../assets/rippl_add_btn.svg'
 import { useNavigate } from 'react-router-dom';
 
 function Input({ recommendations, setRecommendations }) {
@@ -59,9 +60,9 @@ function Input({ recommendations, setRecommendations }) {
   };
 
   return (
-    <>
-      <h1>ADD SONGS</h1>
-      <h3>(up to 3)</h3>
+    <div className='pt-20'>
+      <h1 className='font-proxima font-bold text-7xl mt-8'>ADD SONGS</h1>
+      <h3 className='font-semi font-proxima text-xl'>(up to 3)</h3>
       {songCount >= 1 && (
         <SongInput
           value={song1}
@@ -88,7 +89,9 @@ function Input({ recommendations, setRecommendations }) {
           onArtistChange={(e) => setArtist3(e.target.value)}
         />
       )}
-      {songCount < 3 && <button onClick={addSong}>Add Song</button>}
+      {songCount < 3 && <button className='w-8 mt-4' onClick={addSong}>
+        <img src={addBtn}/>
+        </button>}
       <div className="slidecontainer">
       <input 
         type="range" 
@@ -104,7 +107,7 @@ function Input({ recommendations, setRecommendations }) {
       <button className="get-recs-btn" onClick={getRecs}>
         Get Recommendations
       </button>
-    </>
+    </div>
   )
 }
 

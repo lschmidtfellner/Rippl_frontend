@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.input-text {
+  @apply border-b-2 border-black bg-transparent font-bold w-fit !important;
+  
+
+}
+
+input::-webkit-input-placeholder { /* Chrome, Edge, Safari */
+  color: #000 !important;
+  font-style: italic;
+  font-weight: 500;
+
+}
+
+input::-moz-placeholder { /* Mozilla Firefox */
+  color: #000 !important;
+  font-style: italic;
+  font-weight: 500;
+}
+
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #000 !important;
+  font-style: italic;
+  font-weight: 500;
+}
+
+input::placeholder {
+  color: #000 !important;
+  font-style: italic;
+  font-weight: 500;
+}
