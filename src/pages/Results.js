@@ -24,21 +24,26 @@ function Results({ recommendations, setRecommendations }) {
       </h1>
       {recommendations.map((item, index) => (
         <div
-          className="preview-container mt-8 font-proxima border-b border-black pb-10 w-full flex justify-center items-center"
+          className={`preview-container mt-8 font-proxima border-black pb-10 w-full flex justify-center items-center ${index !== recommendations.length - 1 ? 'border-b' : ''}`}
           key={item.spotify_id}
         >
           <img src={item.artURL} className="h-20 mr-6" />
           <div className="song-info text-lg whitespace-nowrap overflow-hidden truncate w-80">
             {item.title.length > 16 ? (
               <Marquee velocity={25}>
-              {[<span key={item.spotify_id}>{item.title}</span>]}
+              {[<p className='font-bold'>{item.title}&nbsp;-&nbsp;</p>]}
             </Marquee>
-            
             ) : (
               <p className="song-name font-bold">{item.title}</p>
             )}
-            <span className="italic"> by </span>{' '}
-            <span className="song-artist font-bold">{item.artist}</span>
+
+            {item.artist.length > 16 ? (
+              <Marquee velocity={25}>
+                {[<p><span className="italic"> by </span>{item.artist}&nbsp;-&nbsp;</p>]}
+              </Marquee>
+            ) : (
+              <p className='song-artist'><span className="italic"> by </span>{item.artist}</p>
+            )}
           </div>
           {item.previewURL ? (
             <AudioPlayer
@@ -51,7 +56,7 @@ function Results({ recommendations, setRecommendations }) {
             />
           ) : (
             <div className="preview-container ml-4">
-              <p className="italic">Preview unavailable</p>
+              <p className="font-extra-bold">N/A</p>
             </div>
           )}
         </div>
