@@ -102,21 +102,21 @@ function Input({ recommendations, setRecommendations }) {
         </button>
       )}
       <div className="slidecontainer mb-8">
-        <h2 className="font-proxima font-bold text-5xl mt-16 mb-8">
+        <h2 className="font-proxima font-bold text-5xl mt-16 mb-16">
           SET <br />
           POPULARITY
         </h2>
-        <div className="flex">
+        <div className="flex align-center">
           <input
             type="range"
             min="15"
-            max="100"
+            max="99"
             value={popularity}
             onChange={handleSliderChange}
             className="slider"
             id="pop-slider"
           />
-          <p className="pop-quotient ml-4 font-semi font-proxima text-xl">{popularity}</p>
+          {/* <p className="pop-quotient ml-4 font-semi font-proxima text-xl">{popularity}</p> */}
         </div>
       </div>
       <button

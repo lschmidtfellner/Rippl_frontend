@@ -7,11 +7,10 @@
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
   width: 83%; /* Full-width */
-  height: 30px; /* Specified height */
+  height: 1px; /* Specified height */
   background: transparent;
-  border-width: 2px;
+  border-width: 1px;
   border-color: black;
-  border-radius: 20px;
   opacity: 1; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
