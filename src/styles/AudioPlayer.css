@@ -1,0 +1,37 @@
+.rhap_volume-container {
+  display: none ;
+
+}
+
+.rhap_main {
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.rhap_total-time {
+  display: none !important;
+}
+
+.rhap_current-time {
+  display: none !important
+}
+
+.rhap_repeat-button {
+  display: none;
+}
+
+
+.rhap_main-controls-button {
+  width: 35px;      
+  height: 35px; 
+}
+
+.rhap_main-controls-button svg {
+  width: 35px;      
+  height: 35px;     
+}
+
+.Marquee {
+  overflow-x: hidden;
+  font-weight: bold;
+}
