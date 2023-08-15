@@ -102,10 +102,11 @@ function Input({ recommendations, setRecommendations }) {
         </button>
       )}
       <div className="slidecontainer mb-8">
-        <h2 className="font-proxima font-bold text-5xl mt-16 mb-16">
+        <h2 className="font-proxima font-bold text-5xl mt-16">
           SET <br />
           POPULARITY
         </h2>
+        <h3 className="font-semi font-proxima text-xl mb-16">{popularity} out of 100</h3>
         <div className="flex align-center">
           <input
             type="range"

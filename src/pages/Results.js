@@ -10,6 +10,7 @@ function Results({ recommendations, setRecommendations }) {
   const handlePlay = (index) => {
     if (
       currentPlayingIndex !== null &&
+      currentPlayingIndex !== index &&
       playerRefs.current[currentPlayingIndex]
     ) {
       playerRefs.current[currentPlayingIndex].audio.current.pause()
@@ -24,25 +25,26 @@ function Results({ recommendations, setRecommendations }) {
       </h1>
       {recommendations.map((item, index) => (
         <div
-          className={`preview-container mt-8 font-proxima border-black pb-10 w-full flex justify-center items-center ${index !== recommendations.length - 1 ? 'border-b' : ''}`}
+          className={`preview-container mt-8 font-proxima border-black pb-10 w-full flex justify-center items-center ${
+            index !== recommendations.length - 1 ? 'border-b' : ''
+          }`}
           key={item.spotify_id}
         >
           <img src={item.artURL} className="h-20 mr-6" />
           <div className="song-info text-lg whitespace-nowrap overflow-hidden truncate w-80">
-            {item.title.length > 16 ? (
-              <Marquee velocity={25}>
-              {[<p className='font-bold'>{item.title}&nbsp;-&nbsp;</p>]}
-            </Marquee>
+            {item.title.length > 18 ? (
+              <Marquee velocity={12} repeat={2}>
+                {[<p className="font-bold">{item.title}&emsp;~&emsp;{item.title}&emsp;~&emsp;</p>]}
+              </Marquee>
             ) : (
               <p className="song-name font-bold">{item.title}</p>
             )}
-
-            {item.artist.length > 16 ? (
-              <Marquee velocity={25}>
-                {[<p><span className="italic"> by </span>{item.artist}&nbsp;-&nbsp;</p>]}
+            {item.artist.length > 18 ? (
+              <Marquee velocity={12} repeat={2}>
+                {[<p>{item.artist}&emsp;~&emsp;{item.artist}&emsp;~&emsp;</p>]}
               </Marquee>
             ) : (
-              <p className='song-artist'><span className="italic"> by </span>{item.artist}</p>
+              <p className="song-artist">{item.artist}</p>
             )}
           </div>
           {item.previewURL ? (
@@ -50,7 +52,11 @@ function Results({ recommendations, setRecommendations }) {
               ref={(element) => (playerRefs.current[index] = element)}
               className="ml-4"
               src={item.previewURL}
+              volume={1}
               onPlay={() => handlePlay(index)}
+              onPause={() =>
+                currentPlayingIndex === index && setCurrentPlayingIndex(null)
+              }
               showJumpControls={false}
               customAdditionalcontrols={[]}
             />
