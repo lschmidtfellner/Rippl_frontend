@@ -41,7 +41,7 @@ function Landing() {
     <div ref={landingRef} className="landing pt-28">
       <div
         ref={loadRef}
-        className="landing-header font-proxima font-bold text-7xl md:text-8xl lg:text-9xl break-words"
+        className="landing-header font-proxima font-extra-bold text-7xl md:text-8xl lg:text-9xl break-words"
       >
         <div style={{ opacity: 0 }}>GET</div>
         <div style={{ opacity: 0 }}>RECOM-</div>
