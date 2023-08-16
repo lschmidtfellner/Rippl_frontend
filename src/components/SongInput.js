@@ -12,7 +12,7 @@ function SongInput({ value, artistValue, onChange, onArtistChange, animate }) {
         { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' }
       )
     }
-  }, [])
+  }, [animate])
 
   return (
     <div
