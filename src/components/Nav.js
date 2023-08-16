@@ -28,7 +28,9 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
       >
         <div className="flex justify-between w-full">
           <img
-            onClick={() => navigate('/')}
+            onClick={() => {navigate('/')
+            if (isMenuOpen===true){menuToggle()
+            }}}
             src={ripplLogo}
             alt="Rippl logo"
             className="h-6"
@@ -37,7 +39,9 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             <li
               onClick={() => {
                 navigate('/input')
-                menuToggle()
+                if (isMenuOpen === true) {
+                  menuToggle()
+                }
               }}
               className="mr-8"
             >
@@ -84,7 +88,9 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             <li
               onClick={() => {
                 navigate('/input')
-                menuToggle()
+                if (isMenuOpen === true) {
+                  menuToggle()
+                }
               }}
               className="mb-4"
             >
@@ -118,7 +124,6 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
               </a>
             </li>
           </ul>
-          
         )}
       </div>
 
