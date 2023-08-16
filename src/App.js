@@ -22,7 +22,7 @@ function App() {
   let bgColor;
   switch (location.pathname) {
     case "/":
-      bgColor = "#5BEFD3";
+      bgColor = "#80DDCB";
       break;
     case "/input":
       bgColor = "#F4B74A";
