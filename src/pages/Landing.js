@@ -41,7 +41,7 @@ function Landing() {
     <div ref={landingRef} className="landing pt-28">
       <div
         ref={loadRef}
-        className="landing-header font-proxima font-bold text-7xl break-words"
+        className="landing-header font-proxima font-bold text-7xl md:text-8xl lg:text-9xl break-words"
       >
         <div style={{ opacity: 0 }}>GET</div>
         <div style={{ opacity: 0 }}>RECOM-</div>
@@ -49,7 +49,7 @@ function Landing() {
         <div style={{ opacity: 0 }}>ATIONS</div>
         <h3
           style={{ opacity: 0 }}
-          className="font-semi font-proxima text-xl mt-1"
+          className="font-semi font-proxima text-xl md:text-2xl lg:text-3xl mt-1"
         >
           (from Spotify)
         </h3>

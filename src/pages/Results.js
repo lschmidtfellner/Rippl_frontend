@@ -31,8 +31,8 @@ function Results({ recommendations, setRecommendations }) {
   }, [])
 
   return (
-    <div ref={resultRef} className="pt-20">
-      <h1 className="font-proxima font-bold text-5xl mt-8 mb-16">
+    <div ref={resultRef} className="pt-20 lg:px-20">
+      <h1 className="font-proxima font-bold text-5xl lg:text-8xl mt-8 mb-16">
         HERE <br /> YOU GO!
       </h1>
       {recommendations.map((item, index) => (

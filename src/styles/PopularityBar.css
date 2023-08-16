@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 .slidecontainer {
   width: 100%; /* Width of the outside container */
 }
@@ -6,7 +10,7 @@
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 83%; /* Full-width */
+  width: 250px;
   height: 1px; /* Specified height */
   background: black;
   border-width: 1px;

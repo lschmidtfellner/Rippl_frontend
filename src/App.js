@@ -35,7 +35,7 @@ function App() {
   }
 
   return (
-    <div style={{ backgroundColor: bgColor }} className='app-container min-h-screen px-5 lg:px-20 py-2'>
+    <div style={{ backgroundColor: bgColor }} className='app-container min-h-screen px-5 md:px-40 lg:px-60 xl:px-80 py-2'>
       <Nav bgColor={bgColor} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       <Routes>
         <Route path="/" element={<Landing />} />

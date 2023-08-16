@@ -3,7 +3,6 @@
 @import 'tailwindcss/utilities';
 @import url('https://use.typekit.net/bxd0eom.css');
 
-
 body {
   @apply font-proxima !important;
   margin: 0;

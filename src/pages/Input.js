@@ -149,6 +149,7 @@ function Input({ recommendations, setRecommendations }) {
         </div>
       </div>
       <button
+        style={{opacity: 0}}
         className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20"
         onClick={getRecs}
       >

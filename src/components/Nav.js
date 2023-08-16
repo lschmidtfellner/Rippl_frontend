@@ -33,11 +33,49 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             alt="Rippl logo"
             className="h-6"
           ></img>
+          <ul className="font-semi text-xl hidden md:flex">
+            <li
+              onClick={() => {
+                navigate('/input')
+                menuToggle()
+              }}
+              className="mr-8"
+            >
+              Get Recs
+            </li>
+            <li className="mr-8">
+              <a
+                href="https://github.com/lschmidtfellner/Rippl_frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About
+              </a>
+            </li>
+            <li className="mr-8">
+              <a
+                href="https://www.linkedin.com/in/lsfdesign/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Linkedin
+              </a>
+            </li>
+            <li className="">
+              <a
+                href="https://www.lsfdesign.co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Portfolio
+              </a>
+            </li>
+          </ul>
           <img
             onClick={menuToggle}
             alt="menu"
             src={isMenuOpen ? closeBtn : hamburger}
-            className="h-6"
+            className="h-6 md:hidden"
           ></img>
         </div>
 
@@ -52,7 +90,6 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             >
               Get Recs
             </li>
-
             <li className="mb-4">
               <a
                 href="https://github.com/lschmidtfellner/Rippl_frontend"
@@ -81,6 +118,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
               </a>
             </li>
           </ul>
+          
         )}
       </div>
 
