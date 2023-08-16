@@ -27,11 +27,9 @@
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
+  background-color: #F4B74A;
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
-  background: transparent; /* Green background */
   cursor: pointer; /* Cursor on hover */
   border-width: 2px;
   border-color: black;
