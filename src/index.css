@@ -16,7 +16,7 @@ code {
 }
 
 input, button, select, textarea {
-  -webkit-appearance: none !important;
+  -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
