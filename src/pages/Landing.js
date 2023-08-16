@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 
 function Landing() {
   const loadRef = useRef(null)
   const landingRef = useRef(null)
+  const buttonRef = useRef(null)
   const navigate = useNavigate()
 
   async function toInput() {
@@ -26,6 +27,16 @@ function Landing() {
     )
   }, [])
 
+  useEffect(() => {
+        const button = buttonRef.current
+
+    gsap.fromTo(
+      button,
+      { opacity: 0},
+      { opacity: 1, duration: 0.6, delay: 1.5, ease: 'power1.out' }
+    )
+  }, [])
+
   return (
     <div ref={landingRef} className="landing pt-28">
       <div
@@ -42,14 +53,15 @@ function Landing() {
         >
           (from Spotify)
         </h3>
-        <button
-          style={{ opacity: 0 }}
-          onClick={toInput}
-          className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 text-sm"
-        >
-          GET STARTED
-        </button>
       </div>
+      <button
+        ref={buttonRef}
+        style={{ opacity: 0 }}
+        onClick={toInput}
+        className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 text-sm"
+      >
+        GET STARTED
+      </button>
     </div>
   )
 }

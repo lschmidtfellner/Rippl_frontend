@@ -79,7 +79,7 @@ function Input({ recommendations, setRecommendations }) {
       Swal.fire({
         icon: 'error',
         title: 'ERROR',
-        text: 'There was a problem fetching recommendations. Please ensure that there are no typos, and at least one artist/song pairing is entered.',
+        text: 'There was a problem fetching recommendations. Please ensure that there are no typos, and fill out at least the first song/artist form.',
       });
     }
   }
@@ -125,7 +125,7 @@ function Input({ recommendations, setRecommendations }) {
       )}
       {songCount < 3 && (
         <button className="w-8 mt-2" onClick={addSong}>
-          <img src={addBtn} />
+          <img alt='add song' src={addBtn} />
         </button>
       )}
       <div style={{opacity: 0}} className="slidecontainer mb-8">
