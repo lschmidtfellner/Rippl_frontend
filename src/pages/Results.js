@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import AudioPlayer from 'react-h5-audio-player'
 import Marquee from 'react-marquee-slider'
+import { gsap } from 'gsap'
 import '../styles/AudioPlayer.css'
 
 function Results({ recommendations, setRecommendations }) {
   const [currentPlayingIndex, setCurrentPlayingIndex] = useState(null)
   const playerRefs = useRef([])
+  const resultRef = useRef([])
 
   const handlePlay = (index) => {
     if (
@@ -18,8 +20,18 @@ function Results({ recommendations, setRecommendations }) {
     setCurrentPlayingIndex(index)
   }
 
+  useEffect(() => {
+    const lines = resultRef.current.children
+
+    gsap.fromTo(
+      lines,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' }
+    )
+  }, [])
+
   return (
-    <div className="pt-20">
+    <div ref={resultRef} className="pt-20">
       <h1 className="font-proxima font-bold text-5xl mt-8 mb-16">
         HERE <br /> YOU GO!
       </h1>

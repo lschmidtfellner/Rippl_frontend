@@ -12,15 +12,32 @@ import Input from './pages/Input'
 //dependencies
 import { Route, Routes } from 'react-router-dom'
 import React, { useState } from 'react'
-
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
   const [recommendations, setRecommendations] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  
+
+  // Determine background color based on current path
+  let bgColor;
+  switch (location.pathname) {
+    case "/":
+      bgColor = "#5BEFD3";
+      break;
+    case "/input":
+      bgColor = "#F4B74A";
+      break;
+    case "/results":
+      bgColor = "#5EC169";
+      break;
+    default:
+      bgColor = "#5BEFD3"; 
+  }
+
   return (
-    <div className='bg-green-500 min-h-screen px-5 lg:px-20 py-2'>
-      <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+    <div style={{ backgroundColor: bgColor }} className='app-container min-h-screen px-5 lg:px-20 py-2'>
+      <Nav bgColor={bgColor} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/input" element={<Input recommendations={recommendations} setRecommendations={setRecommendations} />} />
@@ -30,4 +47,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

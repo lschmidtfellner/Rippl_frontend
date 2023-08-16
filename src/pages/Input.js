@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
 import '../styles/PopularityBar.css'
 import addBtn from '../assets/rippl_add_btn.svg'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function Input({ recommendations, setRecommendations }) {
   const userId = '6478aa30dee0f9f07836b151'
@@ -15,7 +17,21 @@ function Input({ recommendations, setRecommendations }) {
   const [artist2, setArtist2] = useState('')
   const [song3, setSong3] = useState('')
   const [artist3, setArtist3] = useState('')
+
   const navigate = useNavigate()
+  const inputRef = useRef(null)
+  const songInput2Ref = useRef(null)
+  const songInput3Ref = useRef(null)
+
+  useEffect(() => {
+    const children = inputRef.current.children
+
+    gsap.fromTo(
+      children,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' }
+    )
+  }, [])
 
   const handleSliderChange = (event) => {
     setPopularity(event.target.value)
@@ -60,18 +76,25 @@ function Input({ recommendations, setRecommendations }) {
       }
     } catch (error) {
       console.error('Error:', error)
+      Swal.fire({
+        icon: 'error',
+        title: 'ERROR',
+        text: 'There was a problem fetching recommendations. Please ensure that there are no typos, and at least one artist/song pairing is entered.',
+      });
     }
   }
 
   return (
-    <div className="pt-20">
-      <h2 className="font-proxima font-bold text-5xl mt-8">
+    <div ref={inputRef} className="pt-20">
+      <h2 style={{opacity: 0}} className="font-proxima font-bold text-5xl mt-8">
         ADD <br />
         SONGS
       </h2>
-      <h3 className="font-semi font-proxima text-xl">(up to 3)</h3>
+      <h3 style={{opacity: 0}} className="font-semi font-proxima text-xl">(up to 3)</h3>
       {songCount >= 1 && (
         <SongInput
+          animate={false}
+          //only use initial loading animation for first input component
           value={song1}
           artistValue={artist1}
           onChange={(e) => {
@@ -82,6 +105,8 @@ function Input({ recommendations, setRecommendations }) {
       )}
       {songCount >= 2 && (
         <SongInput
+          animate={true}
+          ref={songInput2Ref}
           value={song2}
           artistValue={artist2}
           onChange={(e) => setSong2(e.target.value)}
@@ -90,6 +115,8 @@ function Input({ recommendations, setRecommendations }) {
       )}
       {songCount >= 3 && (
         <SongInput
+          animate={true}
+          ref={songInput3Ref}
           value={song3}
           artistValue={artist3}
           onChange={(e) => setSong3(e.target.value)}
@@ -101,12 +128,14 @@ function Input({ recommendations, setRecommendations }) {
           <img src={addBtn} />
         </button>
       )}
-      <div className="slidecontainer mb-8">
+      <div style={{opacity: 0}} className="slidecontainer mb-8">
         <h2 className="font-proxima font-bold text-5xl mt-16">
           SET <br />
           POPULARITY
         </h2>
-        <h3 className="font-semi font-proxima text-xl mb-16">{popularity} out of 100</h3>
+        <h3 className="font-semi font-proxima text-xl mb-16">
+          {popularity} out of 100
+        </h3>
         <div className="flex align-center">
           <input
             type="range"
@@ -117,7 +146,6 @@ function Input({ recommendations, setRecommendations }) {
             className="slider"
             id="pop-slider"
           />
-          {/* <p className="pop-quotient ml-4 font-semi font-proxima text-xl">{popularity}</p> */}
         </div>
       </div>
       <button

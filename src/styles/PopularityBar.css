@@ -8,7 +8,7 @@
   appearance: none;
   width: 83%; /* Full-width */
   height: 1px; /* Specified height */
-  background: transparent;
+  background: black;
   border-width: 1px;
   border-color: black;
   opacity: 1; /* Set transparency (for mouse-over effects on hover) */
@@ -35,7 +35,7 @@
 }
 
 .slider::-moz-range-thumb {
-  @apply bg-green-500;
+  background-color: #F4B74A;
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
   cursor: pointer; /* Cursor on hover */

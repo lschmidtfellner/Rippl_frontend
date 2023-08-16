@@ -2,7 +2,7 @@ import React from 'react';
 
 function AddBtn({ onClick }) {
   return (
-    <button onClick={onClick} aria-label="Custom Button">
+    <button className='add-btn' onClick={onClick} aria-label="Custom Button">
       <svg 
         id="Layer_2" 
         xmlns="http://www.w3.org/2000/svg" 

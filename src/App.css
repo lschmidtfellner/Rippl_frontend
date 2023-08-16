@@ -76,3 +76,64 @@ input::placeholder {
   transition: ease-in-out 0.2s;
   @apply bg-black text-green-500
 }
+
+.swal2-modal {
+  @apply font-proxima text-black;
+  border-radius: 0;
+  background-color: #F4B74A;
+}
+
+.swal2-confirm,
+.swal2-confirm:focus,
+.swal2-confirm:active,
+.swal2-confirm:hover {
+  @apply font-proxima border-2 border-black px-2 bg-transparent opacity-100 font-bold text-black !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
+.swal2-styled,
+.swal2-styled:focus,
+.swal2-styled:active,
+.swal2-styled:hover {
+  @apply font-proxima border-2 border-black px-2 bg-transparent opacity-100 font-bold text-black !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
+.swal2-actions,
+.swal2-actions:focus,
+.swal2-actions:active,
+.swal2-actions:hover {
+  @apply font-proxima border-2 border-black px-2 bg-transparent opacity-100 font-bold text-black !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: none !important;
+}
+
+
+.swal2-title {
+  @apply font-bold
+}
+
+.swal2-error .swal2-x-mark-line-left, .swal2-error .swal2-x-mark-line-right {
+  background-color: black !important;
+}
+
+.swal2-icon {
+  border-color: black !important;
+}
+
+.app-container {
+  transition: ease 0.6s;
+}
+
+.nav-div {
+  transition: ease 0.6s;
+}
+
+.nav-overlay {
+  transition: ease 0.6s;
+}
