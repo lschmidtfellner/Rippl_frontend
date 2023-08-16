@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
-import '../styles/PopularityBar.css'
 import addBtn from '../assets/rippl_add_btn.svg'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import Slider from 'rc-slider'
+import 'rc-slider/assets/index.css';
 
 function Input({ recommendations, setRecommendations }) {
   const userId = '6478aa30dee0f9f07836b151'
@@ -33,8 +34,8 @@ function Input({ recommendations, setRecommendations }) {
     )
   }, [])
 
-  const handleSliderChange = (event) => {
-    setPopularity(event.target.value)
+  const handleSliderChange = (value) => {
+    setPopularity(value)
   }
 
   const addSong = () => {
@@ -137,10 +138,9 @@ function Input({ recommendations, setRecommendations }) {
           {popularity} out of 100
         </h3>
         <div className="flex align-center">
-          <input
-            type="range"
-            min="15"
-            max="99"
+          <Slider
+            min={15}
+            max={99}
             value={popularity}
             onChange={handleSliderChange}
             className="slider"

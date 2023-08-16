@@ -145,35 +145,49 @@ input::placeholder {
   transition: ease 0.6s;
 }
 
-input[type="text"], 
-input[type="search"], 
-input[type="password"], 
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border-radius: 0; /* This is to ensure corners are not rounded. */
+.rc-slider-handle,
+.rc-slider-handle:active
+.rc-slider-handle:focus
+.rc-slider-handle:hover {
+  appearance: none !important;
+  height: 26px !important;
+  width: 26px !important;
+  border: black solid 2px !important;
+  transform: translateY(-7px) translateX(-5px) !important;
+  background-color: #F4B74A !important;
+  opacity: 1 !important;
 }
 
-input[type="text"]:focus, 
-input[type="search"]:focus, 
-input[type="password"]:focus, 
-textarea:focus {
-  outline: none; /* Remove default outline */
-  -webkit-box-shadow: none; /* Remove default shadow on iOS */
-  box-shadow: none;
+.rc-slider-handle:active,
+.rc-slider-handle:focus,
+.rc-slider-handle:hover,
+.rc-slider-handle-dragging {
+  appearance: none !important;
+  height: 26px !important;
+  width: 26px !important;
+  border: black solid 2px !important;
+  background-color: #F4B74A !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
 }
 
-input[type="text"], 
-input[type="search"], 
-input[type="password"], 
-textarea {
-  -webkit-box-shadow: inset 0 0 0; /* Removes inner shadow */
-  box-shadow: inset 0 0 0; /* Removes inner shadow */
+.rc-slider-step {
+  display: none !important;
 }
 
-input[type="text"]::-webkit-clear-button, 
-input[type="search"]::-webkit-clear-button, 
-input[type="password"]::-webkit-clear-button {
+.rc-slider-rail {
+  display: none !important;
+}
+
+.rc-slider {
+  @apply mb-10;
+  background-color: black !important;
+  height: 2px !important;
+  width: 280px !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.rc-slider-track {
   display: none;
 }

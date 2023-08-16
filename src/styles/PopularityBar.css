@@ -1,6 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'rangeslider.js/dist/rangeslider.css';
+
 
 .slidecontainer {
   width: 100%; /* Width of the outside container */
