@@ -2,3 +2,7 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build]
+  command = "react-scripts build && postcss src/styles/tailwind.css -o src/styles/index.css"
+  publish = "build/"
