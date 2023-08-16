@@ -3,11 +3,13 @@ import AudioPlayer from 'react-h5-audio-player'
 import Marquee from 'react-marquee-slider'
 import { gsap } from 'gsap'
 import '../styles/AudioPlayer.css'
+import { useNavigate } from 'react-router-dom'
 
 function Results({ recommendations, setRecommendations }) {
   const [currentPlayingIndex, setCurrentPlayingIndex] = useState(null)
   const playerRefs = useRef([])
   const resultRef = useRef([])
+  const navigate = useNavigate()
 
   const handlePlay = (index) => {
     if (
@@ -23,12 +25,16 @@ function Results({ recommendations, setRecommendations }) {
   useEffect(() => {
     const lines = resultRef.current.children
 
+    if (recommendations.length === 0) {
+      navigate('/');
+    }
+
     gsap.fromTo(
       lines,
       { opacity: 0, y: -10 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.2, ease: 'power2.out' }
+      { opacity: 1, y: 0, duration: 0.6, delay: 1, stagger: 0.2, ease: 'power2.out' }
     )
-  }, [])
+  }, [navigate, recommendations])
 
   return (
     <div ref={resultRef} className="pt-20 lg:px-20">

@@ -73,6 +73,7 @@ function Input({ recommendations, setRecommendations }) {
 
       // Navigate only if recommendations array is populated
       if (response.data.length > 0) {
+        window.scroll(0, 0);
         navigate('/results')
       }
     } catch (error) {
