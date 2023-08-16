@@ -31,8 +31,7 @@
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
   cursor: pointer; /* Cursor on hover */
-  border-width: 2px;
-  border-color: black;
+  border: 2px solid black;
   border-radius: 50%;
   box-shadow: none;
 }
@@ -42,9 +41,23 @@
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
   cursor: pointer; /* Cursor on hover */
-  border-width: 2px;
-  border-color: black;
+  border: 2px solid black;
   border-radius: 50%;
   box-shadow: none;
 }
 
+input[type="text"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input[type="text"]::-webkit-clear-button {
+  display: none;
+}
