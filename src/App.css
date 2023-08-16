@@ -3,8 +3,6 @@
 @import 'tailwindcss/utilities';
 @import url('https://use.typekit.net/bxd0eom.css');
 
-
-
 .App {
   text-align: center;
 }
@@ -46,8 +44,8 @@
 
 .input-text {
   @apply border-b-2 border-black bg-transparent font-bold w-fit !important;
-  
-
+  border-radius: 0 !important;
+  box-shadow: 0 !important;
 }
 
 input::-webkit-input-placeholder { /* Chrome, Edge, Safari */
@@ -81,7 +79,17 @@ input::placeholder {
 
 .get-started:active {
   transition: ease-in-out 0.2s;
-  @apply bg-black text-green-500
+  @apply bg-black;
+  color: #61dafb;
+}
+
+.get-recs-btn {
+  transition: ease-in-out 0.2s;
+}
+
+.get-recs-btn:active {
+  @apply bg-black;
+  color: #F4B74A
 }
 
 .swal2-modal {
@@ -190,4 +198,16 @@ input::placeholder {
 
 .rc-slider-track {
   display: none;
+}
+
+input:focus {
+  border-top: 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  outline: 0 !important;
+}
+
+input {
+  border-radius: 0 !important;
+  box-shadow: 0 !important;
 }
