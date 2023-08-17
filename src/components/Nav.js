@@ -24,7 +24,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
     <div>
       <div
         style={{ backgroundColor: bgColor }}
-        className="nav-div fixed top-0 left-0 w-full z-50 py-6 px-5"
+        className="nav-div fixed top-0 left-0 w-full z-50 py-6 px-5 md:px-60 xl:px-80"
       >
         <div className="flex justify-between w-full">
           <img
@@ -35,7 +35,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             alt="Rippl logo"
             className="h-5"
           ></img>
-          <ul className="font-semi text-xl hidden md:flex">
+          <ul className="font-semi text-xl hidden lg:flex">
             <li
               onClick={() => {
                 navigate('/input')
@@ -79,7 +79,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             onClick={menuToggle}
             alt="menu"
             src={isMenuOpen ? closeBtn : hamburger}
-            className="h-5 md:hidden"
+            className="h-5 lg:hidden"
           ></img>
         </div>
 
