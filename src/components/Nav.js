@@ -24,7 +24,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
     <div>
       <div
         style={{ backgroundColor: bgColor }}
-        className="nav-div fixed top-0 left-0 w-full z-50 py-6 px-5 md:px-60 xl:px-80"
+        className="nav-div fixed top-0 left-0 w-full z-50 py-6 px-5 md:px-40 xl:px-80"
       >
         <div className="flex justify-between w-full">
           <img
