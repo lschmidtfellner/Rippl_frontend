@@ -35,7 +35,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             alt="Rippl logo"
             className="h-5"
           ></img>
-          <ul className="font-semi text-xl hidden lg:flex">
+          <ul className="font-bold font-proxima text-xl hidden lg:flex">
             <li
               onClick={() => {
                 navigate('/input')
@@ -84,7 +84,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
         </div>
 
         {isMenuOpen && (
-          <ul className="font-semi text-3xl mt-8">
+          <ul className="font-bold font-proxima text-2xl mt-8">
             <li
               onClick={() => {
                 navigate('/input')
