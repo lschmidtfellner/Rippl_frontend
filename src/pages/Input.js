@@ -88,7 +88,7 @@ function Input({ recommendations, setRecommendations }) {
 
   return (
     <div ref={inputRef} className="pt-20">
-      <h2 style={{opacity: 0}} className="font-proxima font-extra-bold text-5xl mt-8">
+      <h2 style={{opacity: 0}} className="font-comba font-extra-bold text-4xl mt-8">
         ADD <br />
         SONGS
       </h2>
@@ -131,7 +131,7 @@ function Input({ recommendations, setRecommendations }) {
         </button>
       )}
       <div style={{opacity: 0}} className="slidecontainer mb-8">
-        <h2 className="font-proxima font-extra-bold text-5xl mt-16">
+        <h2 className="font-comba font-extra-bold text-4xl mt-16">
           SET <br />
           POPULARITY
         </h2>
@@ -154,7 +154,7 @@ function Input({ recommendations, setRecommendations }) {
         className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20"
         onClick={getRecs}
       >
-        Get Recommendations
+        GET RECOMMENDATIONS
       </button>
     </div>
   )

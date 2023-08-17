@@ -16,7 +16,8 @@ module.exports = {
         scroll: 'scroll 10s linear infinite',
       },
       fontFamily: {
-        'proxima': ['proxima-nova', 'sans-serif']
+        'proxima': ['proxima-nova', 'sans-serif'],
+        'comba': ['Comba', 'sans-serif']
       },
       fontWeight: {
         'regular': 400,

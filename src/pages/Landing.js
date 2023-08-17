@@ -41,11 +41,11 @@ function Landing() {
     <div ref={landingRef} className="landing pt-28">
       <div
         ref={loadRef}
-        className="landing-header font-proxima font-extra-bold text-7xl md:text-8xl lg:text-9xl break-words"
+        className="landing-header font-comba text-6xl md:text-8xl xl:text-9xl break-words"
       >
         <div style={{ opacity: 0 }}>GET</div>
-        <div style={{ opacity: 0 }}>RECOM-</div>
-        <div style={{ opacity: 0 }}>MEND-</div>
+        <div style={{ opacity: 0 }}>RECOM~</div>
+        <div style={{ opacity: 0 }}>MEND~</div>
         <div style={{ opacity: 0 }}>ATIONS</div>
         <h3
           style={{ opacity: 0 }}
@@ -58,7 +58,7 @@ function Landing() {
         ref={buttonRef}
         style={{ opacity: 0 }}
         onClick={toInput}
-        className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 text-sm"
+        className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20"
       >
         GET STARTED
       </button>

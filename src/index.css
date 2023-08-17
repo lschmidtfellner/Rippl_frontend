@@ -4,7 +4,6 @@
 @import url('https://use.typekit.net/bxd0eom.css');
 
 body {
-  @apply font-proxima !important;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
