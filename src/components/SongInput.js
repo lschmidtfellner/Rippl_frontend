@@ -17,7 +17,7 @@ function SongInput({ value, artistValue, onChange, onArtistChange, animate }) {
   return (
     <div
       ref={containerRef}
-      className="song-input mt-4 font-proxima pb-2 pt-6 w-80"
+      className="song-input mt-4 font-proxima pb-2 pt-6 w-80 pr-10"
     >
       <input
         className="input-text"

@@ -87,12 +87,13 @@ function Input({ recommendations, setRecommendations }) {
   }
 
   return (
-    <div ref={inputRef} className="pt-20">
+    <div ref={inputRef} className="pt-20 xl:pt-32">
       <h2 style={{opacity: 0}} className="font-comba font-extra-bold text-4xl mt-8">
         ADD <br />
         SONGS
       </h2>
       <h3 style={{opacity: 0}} className="font-bold font-proxima text-xl">(up to 3)</h3>
+      <div className='xl:flex'>
       {songCount >= 1 && (
         <SongInput
           animate={false}
@@ -126,10 +127,11 @@ function Input({ recommendations, setRecommendations }) {
         />
       )}
       {songCount < 3 && (
-        <button className="w-8 mt-2" onClick={addSong}>
+        <button className="w-8 mt-2 xl:mt-14" onClick={addSong}>
           <img alt='add song' src={addBtn} />
         </button>
       )}
+      </div>
       <div style={{opacity: 0}} className="slidecontainer mb-8">
         <h2 className="font-comba font-extra-bold text-4xl mt-16">
           SET <br />
@@ -151,7 +153,7 @@ function Input({ recommendations, setRecommendations }) {
       </div>
       <button
         style={{opacity: 0}}
-        className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20 text-sm"
+        className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-6 mb-20 text-sm"
         onClick={getRecs}
       >
         GET RECOMMENDATIONS
