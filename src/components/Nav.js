@@ -33,7 +33,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             }}}
             src={ripplLogo}
             alt="Rippl logo"
-            className="h-6"
+            className="h-5"
           ></img>
           <ul className="font-semi text-xl hidden md:flex">
             <li
@@ -79,7 +79,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             onClick={menuToggle}
             alt="menu"
             src={isMenuOpen ? closeBtn : hamburger}
-            className="h-6 md:hidden"
+            className="h-5 md:hidden"
           ></img>
         </div>
 

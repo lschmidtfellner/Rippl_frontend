@@ -92,7 +92,7 @@ function Input({ recommendations, setRecommendations }) {
         ADD <br />
         SONGS
       </h2>
-      <h3 style={{opacity: 0}} className="font-semi font-proxima text-xl">(up to 3)</h3>
+      <h3 style={{opacity: 0}} className="font-bold font-proxima text-xl">(up to 3)</h3>
       {songCount >= 1 && (
         <SongInput
           animate={false}
@@ -135,7 +135,7 @@ function Input({ recommendations, setRecommendations }) {
           SET <br />
           POPULARITY
         </h2>
-        <h3 className="font-semi font-proxima text-xl mb-16">
+        <h3 className="font-bold font-proxima text-xl mb-16">
           {popularity} out of 100
         </h3>
         <div className="flex align-center">
@@ -151,7 +151,7 @@ function Input({ recommendations, setRecommendations }) {
       </div>
       <button
         style={{opacity: 0}}
-        className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20"
+        className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20 text-sm"
         onClick={getRecs}
       >
         GET RECOMMENDATIONS

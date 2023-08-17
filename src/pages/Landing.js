@@ -38,7 +38,7 @@ function Landing() {
   }, [])
 
   return (
-    <div ref={landingRef} className="landing pt-28">
+    <div ref={landingRef} className="landing pt-36">
       <div
         ref={loadRef}
         className="landing-header font-comba text-6xl md:text-8xl xl:text-9xl break-words"
@@ -49,7 +49,7 @@ function Landing() {
         <div style={{ opacity: 0 }}>ATIONS</div>
         <h3
           style={{ opacity: 0 }}
-          className="font-semi font-proxima text-xl md:text-2xl lg:text-3xl mt-1"
+          className="font-bold font-proxima text-xl md:text-2xl lg:text-3xl mt-1"
         >
           (from Spotify)
         </h3>
@@ -58,7 +58,7 @@ function Landing() {
         ref={buttonRef}
         style={{ opacity: 0 }}
         onClick={toInput}
-        className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20"
+        className="font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-10 mb-20 text-sm"
       >
         GET STARTED
       </button>
