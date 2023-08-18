@@ -33,7 +33,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
             }}}
             src={ripplLogo}
             alt="Rippl logo"
-            className="h-5"
+            className="h-5 cursor-pointer"
           ></img>
           <ul className="font-bold font-proxima text-xl hidden lg:flex">
             <li
@@ -43,7 +43,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
                   menuToggle()
                 }
               }}
-              className="mr-8"
+              className="mr-8 cursor-pointer"
             >
               Get Recs
             </li>
@@ -92,7 +92,7 @@ function Nav({ isMenuOpen, setIsMenuOpen, bgColor }) {
                   menuToggle()
                 }
               }}
-              className="mb-4"
+              className="mb-4 cursor-pointer"
             >
               Get Recs
             </li>
