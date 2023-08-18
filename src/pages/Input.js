@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
+import GetRecsBtn from '../components/GetRecsBtn'
 import addBtn from '../assets/rippl_add_btn.svg'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
@@ -23,6 +24,7 @@ function Input({ recommendations, setRecommendations }) {
   const inputRef = useRef(null)
   const songInput2Ref = useRef(null)
   const songInput3Ref = useRef(null)
+  const getRecsBtnRef = useRef(null)
 
   useEffect(() => {
     const children = inputRef.current.children
@@ -151,13 +153,7 @@ function Input({ recommendations, setRecommendations }) {
           />
         </div>
       </div>
-      <button
-        style={{opacity: 0}}
-        className="get-recs-btn font-proxima-nova font-bold get-started border-2 border-black px-4 py-2 mt-6 mb-20 text-sm"
-        onClick={getRecs}
-      >
-        GET RECOMMENDATIONS
-      </button>
+      <GetRecsBtn onClick={getRecs} ref={getRecsBtnRef} />
     </div>
   )
 }
