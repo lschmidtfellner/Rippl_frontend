@@ -89,7 +89,7 @@ function Input({ recommendations, setRecommendations }) {
   }
 
   return (
-    <div ref={inputRef} className="pt-20 xl:pt-32">
+    <div ref={inputRef} className="pt-20">
       <h2 style={{opacity: 0}} className="font-comba font-extra-bold text-4xl mt-8">
         ADD <br />
         SONGS

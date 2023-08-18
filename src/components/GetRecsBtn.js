@@ -37,7 +37,7 @@ const GetRecsBtn = forwardRef((props, ref) => {
       }}
     >
       <div
-        className={`arrow-container font-proxima font-bold flex items-center justify-center mt-10 ${
+        className={`arrow-container font-proxima font-bold flex items-center justify-center mt-20 ${
           isClicked ? 'clicked' : ''
         }`}
         style={{
