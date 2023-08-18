@@ -48,7 +48,7 @@ function Results({ recommendations, setRecommendations }) {
           }`}
           key={item.spotify_id}
         >
-          <img src={item.artURL} alt={item.artist} className="h-20 mr-6" />
+          <img src={item.artURL} alt={item.artist} className="h-20 mr-6" style={{boxShadow: '-5px 5px 0px #eb3adf'}} />
           <div className="song-info text-lg whitespace-nowrap overflow-hidden truncate w-80">
             {item.title.length > 18 ? (
               <Marquee velocity={12} repeat={2}>
@@ -68,7 +68,7 @@ function Results({ recommendations, setRecommendations }) {
           {item.previewURL ? (
             <AudioPlayer
               ref={(element) => (playerRefs.current[index] = element)}
-              className="ml-4"
+              className="ml-5"
               src={item.previewURL}
               volume={0.6}
               onPlay={() => handlePlay(index)}
