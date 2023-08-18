@@ -44,8 +44,8 @@ function Landing() {
         className="landing-header font-comba text-6xl md:text-8xl xl:text-9xl break-words"
       >
         <div style={{ opacity: 0 }}>GET</div>
-        <div style={{ opacity: 0 }}>RECOM~</div>
-        <div style={{ opacity: 0 }}>MEND~</div>
+        <div style={{ opacity: 0 }}>RECOM-</div>
+        <div style={{ opacity: 0 }}>MEND-</div>
         <div style={{ opacity: 0 }}>ATIONS</div>
         <h3
           style={{ opacity: 0 }}
