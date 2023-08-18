@@ -37,7 +37,7 @@ function Results({ recommendations, setRecommendations }) {
   }, [navigate, recommendations])
 
   return (
-    <div ref={resultRef} className="pt-20 lg:px-20">
+    <div ref={resultRef} className="pt-20 lg:px-20 2xl:px-48">
       <h1 className="font-comba font-extra-bold text-5xl lg:text-8xl mt-8 mb-16">
         HERE <br /> YOU GO!
       </h1>
