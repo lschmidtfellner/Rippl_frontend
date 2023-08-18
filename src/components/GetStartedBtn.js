@@ -32,7 +32,7 @@ const GetStartedBtn = forwardRef((props, ref) => {
       style={{
         transform: isClicked ? 'scale(0.9)' : 'scale(1)',
         transition: 'transform 0.3s',
-        transformOrigin: '20% 30%'
+        transformOrigin: '8% 20%'
       }}
     >
       <div
