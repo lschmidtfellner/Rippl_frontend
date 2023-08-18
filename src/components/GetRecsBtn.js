@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, forwardRef } from 'react'
+import React, { useState, useEffect, forwardRef } from 'react'
 import CircleType from 'circletype'
 import arrow from '../assets/rippl_next_btn.svg'
 
