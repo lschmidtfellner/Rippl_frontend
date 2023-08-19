@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import GetStartedBtn from '../components/GetStartedBtn'
+import LandingAnimation from '../components/LandingAnimation'
 
 function Landing() {
   const loadRef = useRef(null)
@@ -29,17 +30,18 @@ function Landing() {
   }, [])
 
   useEffect(() => {
-        const button = buttonRef.current
+    const button = buttonRef.current
 
     gsap.fromTo(
       button,
-      { opacity: 0},
+      { opacity: 0 },
       { opacity: 1, duration: 0.6, delay: 1.5, ease: 'power1.out' }
     )
   }, [])
 
   return (
     <div ref={landingRef} className="landing pt-36">
+      <LandingAnimation />
       <div
         ref={loadRef}
         className="landing-header font-comba text-6xl md:text-8xl break-words"
@@ -55,8 +57,7 @@ function Landing() {
           (from Spotify)
         </h3>
       </div>
-      <GetStartedBtn onClick={toInput} ref={buttonRef}/>
-      
+      <GetStartedBtn onClick={toInput} ref={buttonRef} />
     </div>
   )
 }
