@@ -4,6 +4,7 @@ import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
 import GetRecsBtn from '../components/GetRecsBtn'
 import addBtn from '../assets/rippl_add_btn.svg'
+import InputBackground from '../components/InputBackground'
 import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Slider from 'rc-slider'
@@ -90,6 +91,7 @@ function Input({ recommendations, setRecommendations }) {
 
   return (
     <div ref={inputRef} className="pt-20">
+      <InputBackground/>
       <h2 style={{opacity: 0}} className="font-comba font-extra-bold text-4xl mt-8">
         ADD <br />
         SONGS

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { gsap } from 'gsap'
 import GetStartedBtn from '../components/GetStartedBtn'
-import LandingAnimation from '../components/LandingAnimation'
+import LandingAnimation from '../components/LandingBackground'
 
 function Landing() {
   const loadRef = useRef(null)
