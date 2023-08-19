@@ -25,7 +25,7 @@ function LandingAnimation() {
     //     />
     // </div>
 
-    <img className='fixed scale-90 top-60 left-32 md:scale-50 md:top-20 lg:top-12 lg:left-auto lg:right-18 xl:right-48' src={ringImg}></img>
+    <img className='fixed scale-90 top-60 left-32 md:scale-50 md:top-20 lg:top-12 lg:left-auto lg:right-18 xl:right-18 2xl:right-24' src={ringImg}></img>
   )
 }
 
