@@ -10,7 +10,7 @@ function InputBackground() {
       <img
         alt="funny wave"
         src={wave3}
-        className="fixed h-[180px] md:h-[300px] right-[-60px] md:right-[-200px] lg:right-[-50px] xl:right-[-150px] 2xl:right-[200px] top-[40px]"
+        className="fixed h-[180px] md:h-[300px] right-[-60px] md:right-[-200px] lg:right-[-50px]  2xl:right-[200px] top-[40px]"
       ></img>
       <img
         alt="funny wave"
@@ -25,7 +25,7 @@ function InputBackground() {
       <img
         alt="funny wave"
         src={wave4}
-        className="fixed h-0 w-auto 2xl:h-[200px] right-[-100px] top-[420px]"
+        className="fixed h-0 w-auto xl:h-[200px] right-[-100px] top-[420px]"
         style={{rotate: '10deg'}}
       ></img>
     </div>
