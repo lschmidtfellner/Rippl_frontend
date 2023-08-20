@@ -48,7 +48,7 @@ function Results({ recommendations, setRecommendations }) {
           }`}
           key={item.spotify_id}
         >
-          <img src={item.artURL} alt={item.artist} className="h-20 mr-6" style={{boxShadow: '-5px 5px 0px #eb3adf'}} />
+          <img src={item.artURL} alt={item.artist} className="h-20 mr-6" style={{boxShadow: '-5px 5px 0px #345131'}} />
           <div className="song-info text-lg whitespace-nowrap overflow-hidden truncate w-80">
             {item.title.length > 18 ? (
               <Marquee velocity={12} repeat={2}>
