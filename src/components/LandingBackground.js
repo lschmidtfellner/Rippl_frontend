@@ -1,32 +1,12 @@
-import React from 'react'
-// import landingInner from '../assets/landinganimation/rippl_ring_inner.png'
-// import landingMiddle from '../assets/landinganimation/rippl_ring_middle.png'
-// import landingOuter from '../assets/landinganimation/rippl_ring_outerAsset.png'
+import React, { forwardRef } from 'react';
 
-import ringImg from '../assets/landingbackground/rippl_ring_full.png'
-import ring2 from '../assets/landingbackground/rippl_ring_2.png'
-import ring3 from '../assets/landingbackground/rippl_ring_3.png'
+import ringImg from '../assets/landingbackground/rippl_ring_full.png';
+import ring2 from '../assets/landingbackground/rippl_ring_2.png';
+import ring3 from '../assets/landingbackground/rippl_ring_3.png';
 
-function LandingAnimation() {
+const LandingAnimation = forwardRef((props, ref) => {
   return (
-    // <div className="relative">
-    //     <img
-    //       style={{ position: 'absolute', top: '0', left: '0', width: '600px', height: 'auto' }}
-    //       src={landingOuter}
-    //       alt="outer-ring"
-    //     />
-    //     <img
-    //       style={{ position: 'absolute', top: '80px', left: '80px', width: '400px', height: 'auto' }}
-    //       src={landingMiddle}
-    //       alt="middle-ring"
-    //     />
-    //     <img
-    //       style={{ position: 'absolute', top: '180px', left: '180px', width: '160px', height: 'auto' }}
-    //       src={landingInner}
-    //       alt="inner-ring"
-    //     />
-    // </div>
-    <div>
+    <div ref={ref}>
       <img
         className="fixed top-60 right-[-140px] md:right-[100px] md:top-[400px] lg:top-[500px] lg:left-auto lg:right-[100px] xl:right-[220px] 2xl:right-[400px] h-[400px] md:h-[550px] lg:h-[800px]"
         src={ringImg}
@@ -43,7 +23,7 @@ function LandingAnimation() {
         alt='funny rippl'
       ></img>
     </div>
-  )
-}
+  );
+});
 
-export default LandingAnimation
+export default LandingAnimation;

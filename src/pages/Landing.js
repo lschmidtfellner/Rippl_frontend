@@ -8,6 +8,7 @@ function Landing() {
   const loadRef = useRef(null)
   const landingRef = useRef(null)
   const buttonRef = useRef(null)
+  const backgroundRef = useRef(null)
   const navigate = useNavigate()
 
   async function toInput() {
@@ -39,9 +40,19 @@ function Landing() {
     )
   }, [])
 
+  useEffect(() => {
+    const bg = backgroundRef.current
+
+    gsap.fromTo(
+      bg,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: 'power1.out' }
+    )
+  }, [])
+
   return (
     <div ref={landingRef} className="landing pt-36">
-      <LandingAnimation />
+      <LandingAnimation ref={backgroundRef} />
       <div
         ref={loadRef}
         className="landing-header font-comba text-6xl md:text-8xl break-words"

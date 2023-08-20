@@ -26,6 +26,17 @@ function Input({ recommendations, setRecommendations }) {
   const songInput2Ref = useRef(null)
   const songInput3Ref = useRef(null)
   const getRecsBtnRef = useRef(null)
+  const backgroundRef = useRef(null)
+
+  useEffect(() => {
+    const bg = backgroundRef.current
+
+    gsap.fromTo(
+      bg,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, ease: 'power1.out' }
+    )
+  }, [])
 
   useEffect(() => {
     const children = inputRef.current.children
@@ -91,7 +102,7 @@ function Input({ recommendations, setRecommendations }) {
 
   return (
     <div ref={inputRef} className="pt-20">
-      <InputBackground/>
+      <InputBackground ref={backgroundRef}/>
       <h2 style={{opacity: 0}} className="font-comba font-extra-bold text-4xl mt-8">
         ADD <br />
         SONGS
