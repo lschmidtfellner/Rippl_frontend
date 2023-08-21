@@ -9,7 +9,7 @@ const InputBackground = forwardRef((props, ref) => {
       <img
         alt="funny wave"
         src={wave3}
-        className="fixed h-[180px] md:h-[300px] right-[-60px] md:right-[-200px] lg:right-[-50px] 2xl:right-[00px] top-[40px]"
+        className="fixed h-[220px] md:h-[300px] xl:h-[360px] right-[-60px] md:right-[-200px] lg:right-[-50px] 2xl:right-[-100px] top-[40px] xl:top-[50px]"
       />
       <img
         alt="funny wave"
@@ -20,7 +20,7 @@ const InputBackground = forwardRef((props, ref) => {
       <img
         alt="funny wave"
         src={wave2}
-        className="fixed h-[300px] right-[0px] md:right-auto md:left-[200px] xl:left-[400px] 2xl:left-[700px] top-[640px] xl:top-[570px]"
+        className="fixed h-[260px] right-[0px] md:right-auto md:left-[200px] xl:left-[400px] 2xl:left-[700px] top-[670px] xl:top-[570px]"
       />
     </div>
   );

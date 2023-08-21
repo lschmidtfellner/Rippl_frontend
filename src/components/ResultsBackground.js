@@ -9,7 +9,7 @@ const ResultsBackground = forwardRef((props, ref) => {
       <img
         alt="funny pop"
         src={pop1}
-        className="fixed h-[250px] md:h-[300px] top-[140px] lg:top-[300px] left-[-150px] md:left-[-100px xl:left-[100px]"
+        className="fixed h-[250px] md:h-[300px] top-[140px] lg:top-[300px] left-[-80px] md:left-[-100px xl:left-[100px]"
       />
       <img
         alt="funny pop"
@@ -19,7 +19,7 @@ const ResultsBackground = forwardRef((props, ref) => {
       <img
         alt="funny"
         src={pop3}
-        className="fixed h-[350px] md:h-[500px] top-[620px] right-[-200px] lg:right-[-100px] 2xl:right-[50px] "
+        className="fixed h-[350px] md:h-[500px] xl:h-[700px] top-[550px] right-[-180px] lg:right-[-100px] xl:right-[0px] 2xl:right-[100px] "
       />
     </div>
   );
