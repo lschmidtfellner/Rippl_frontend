@@ -169,7 +169,7 @@ input::placeholder {
   width: 26px !important;
   border: black solid 2px !important;
   transform: translateY(-7px) translateX(-5px) !important;
-  background-color: #F4B74A !important;
+  background-color: #f2a829 !important;
   opacity: 1 !important;
 }
 
@@ -181,7 +181,7 @@ input::placeholder {
   height: 26px !important;
   width: 26px !important;
   border: black solid 2px !important;
-  background-color: #F4B74A !important;
+  background-color: #f2a829 !important;
   opacity: 1 !important;
   box-shadow: none !important;
 }

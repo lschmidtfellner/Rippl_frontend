@@ -29,7 +29,7 @@
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-  background-color: #F4B74A;
+  background-color: #f2a829;
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
   cursor: pointer; /* Cursor on hover */
@@ -39,7 +39,7 @@
 }
 
 .slider::-moz-range-thumb {
-  background-color: #F4B74A;
+  background-color: #f2a829;
   width: 26px; /* Set a specific slider handle width */
   height: 26px; /* Slider handle height */
   cursor: pointer; /* Cursor on hover */

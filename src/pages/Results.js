@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import AudioPlayer from 'react-h5-audio-player'
 import Marquee from 'react-marquee-slider'
+import ResultsBackground from '../components/ResultsBackground'
 import { gsap } from 'gsap'
 import '../styles/AudioPlayer.css'
 import { useNavigate } from 'react-router-dom'
@@ -9,6 +10,7 @@ function Results({ recommendations, setRecommendations }) {
   const [currentPlayingIndex, setCurrentPlayingIndex] = useState(null)
   const playerRefs = useRef([])
   const resultRef = useRef([])
+  const backgroundRef = useRef(null)
   const navigate = useNavigate()
 
   const handlePlay = (index) => {
@@ -37,6 +39,8 @@ function Results({ recommendations, setRecommendations }) {
   }, [navigate, recommendations])
 
   return (
+    <div>
+      <ResultsBackground ref={backgroundRef}/>
     <div ref={resultRef} className="pt-20 lg:px-20 2xl:px-48">
       <h1 className="font-comba font-extra-bold text-5xl lg:text-8xl mt-8 mb-16">
         HERE <br /> YOU GO!
@@ -85,6 +89,7 @@ function Results({ recommendations, setRecommendations }) {
           )}
         </div>
       ))}
+    </div>
     </div>
   )
 }
