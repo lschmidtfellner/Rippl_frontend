@@ -25,7 +25,7 @@ function App() {
       bgColor = "#80DDCB";
       break;
     case "/input":
-      bgColor = "#f2ae3a";
+      bgColor = "#f2a829";
       break;
     case "/results":
       bgColor = "#5EC169";

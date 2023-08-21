@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
 
-import ringImg from '../assets/landingbackground/rippl_ring_full.png';
-import ring2 from '../assets/landingbackground/rippl_ring_2.png';
-import ring3 from '../assets/landingbackground/rippl_ring_3.png';
+import ringImg from '../assets/landinganimation/rippl_ring_full.png';
+import ring2 from '../assets/landinganimation/rippl_ring_2.png';
+import ring3 from '../assets/landinganimation/rippl_ring_3.png';
 
 const LandingAnimation = forwardRef((props, ref) => {
   return (

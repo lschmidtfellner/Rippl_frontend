@@ -5,7 +5,7 @@ import pop3 from '../assets/resultsbackground/rippl_pop_3.png';
 
 const ResultsBackground = forwardRef((props, ref) => {
   return (
-    <div ref={ref}>
+    <div className='relative' ref={ref}>
       <img
         alt="funny pop"
         src={pop1}
