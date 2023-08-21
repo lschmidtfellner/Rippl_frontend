@@ -10,7 +10,7 @@ import Input from './pages/Input'
 
 //dependencies
 import { Route, Routes } from 'react-router-dom'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom';
 
 function App() {
@@ -33,6 +33,14 @@ function App() {
     default:
       bgColor = "#5BEFD3"; 
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = bgColor;
+
+    return () => {
+      document.body.style.backgroundColor = null;
+    };
+  }, [bgColor])
 
   return (
     <div style={{ backgroundColor: bgColor }} className='app-container min-h-screen px-5 md:px-40 lg:px-60 xl:px-80 py-2 overflow-hidden'>
