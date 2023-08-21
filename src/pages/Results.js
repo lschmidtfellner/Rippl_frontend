@@ -38,6 +38,16 @@ function Results({ recommendations, setRecommendations }) {
     )
   }, [navigate, recommendations])
 
+  useEffect(() => {
+    const bg = backgroundRef.current
+
+    gsap.fromTo(
+      bg,
+      { opacity: 0 },
+      { opacity: 1, duration: 0.6, delay: 1.5, ease: 'power1.out' }
+    )
+  }, [])
+
   return (
     <div>
       <ResultsBackground ref={backgroundRef}/>
