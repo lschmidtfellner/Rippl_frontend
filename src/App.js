@@ -10,40 +10,67 @@ import Input from './pages/Input'
 
 //dependencies
 import { Route, Routes } from 'react-router-dom'
-import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 function App() {
-  const location = useLocation();
-  const [recommendations, setRecommendations] = useState([]);
+  const location = useLocation()
+  const [recommendations, setRecommendations] = useState([])
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [bgColor, setBgColor] = useState("#5BEFD3") // Default color
 
-  // Determine background color based on current path
-  let bgColor;
-  switch (location.pathname) {
-    case "/":
-      bgColor = "#80DDCB";
-      break;
-    case "/input":
-      bgColor = "#f2a829";
-      break;
-    case "/results":
-      bgColor = "#5EC169";
-      break;
-    default:
-      bgColor = "#5BEFD3"; 
-  }
+  useEffect(() => {
+    let newBgColor
+    switch (location.pathname) {
+      case '/':
+        newBgColor = '#80DDCB'
+        break
+      case '/input':
+        newBgColor = '#f2a829'
+        break
+      case '/results':
+        newBgColor = '#5EC169'
+        break
+      default:
+        newBgColor = '#5BEFD3'
+    }
+    setBgColor(newBgColor);
+    document.body.style.backgroundColor = newBgColor;
+  }, [location.pathname])
 
   return (
-    <div style={{ backgroundColor: bgColor }} className='app-container min-h-screen px-5 md:px-40 lg:px-60 xl:px-80 py-2 overflow-hidden'>
-      <Nav bgColor={bgColor} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+    <div
+      style={{ backgroundColor: bgColor }}
+      className="app-container min-h-screen px-5 md:px-40 lg:px-60 xl:px-80 py-2 overflow-hidden"
+    >
+      <Nav
+        bgColor={bgColor}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/input" element={<Input recommendations={recommendations} setRecommendations={setRecommendations} />} />
-        <Route path="/results" element={<Results recommendations={recommendations} setRecommendations={setRecommendations} />} />
+        <Route
+          path="/input"
+          element={
+            <Input
+              recommendations={recommendations}
+              setRecommendations={setRecommendations}
+            />
+          }
+        />
+        <Route
+          path="/results"
+          element={
+            <Results
+              recommendations={recommendations}
+              setRecommendations={setRecommendations}
+            />
+          }
+        />
       </Routes>
     </div>
   )
 }
 
-export default App;
+export default App
