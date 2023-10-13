@@ -55,7 +55,7 @@ function Landing() {
       <LandingAnimation ref={backgroundRef} />
       <div
         ref={loadRef}
-        className="landing-header font-comba text-6xl md:text-8xl break-words"
+        className="landing-header font-comba text-6xl md:text-[5.5rem] 2xl:text-8xl break-words"
       >
         <div style={{ opacity: 0 }}>GET</div>
         <div style={{ opacity: 0 }}>RECOM-</div>
