@@ -60,7 +60,8 @@ function Input({ recommendations, setRecommendations }) {
 
   const getRecs = async () => {
     try {
-      console.log(song1, artist1, song2, artist2, song3, artist3)
+      // COMMENTED OUT: original API logic
+      /*
       const results = await Promise.all(
         [
           song1 && artist1
@@ -74,31 +75,44 @@ function Input({ recommendations, setRecommendations }) {
             : null
         ].filter(Boolean)
       )
-
-      console.log(results)
+  
       const seedTracks = results.map((item) => item.data.spotify_id).join(',')
-      console.log(seedTracks)
-
+  
       const response = await api.post(
         `/${userId}/recommendations?seed_tracks=${seedTracks}&max_popularity=${popularity}`
       )
+  
       setRecommendations(response.data)
-      console.log(response.data)
-
-      // Navigate only if recommendations array is populated
+  
       if (response.data.length > 0) {
-        window.scroll(0, 0);
+        window.scroll(0, 0)
         navigate('/results')
       }
+      */
+  
+      // NEW: always show alert and go to results page
+      const result = await Swal.fire({
+        icon: 'info',
+        title: 'This is now a demo',
+        text: 'In December of 2024, Spotify changed the perSpotify discontinued public access to its recommendations API in December 2024, which this project originally relied on to generate personalized results. To preserve the experience for portfolio purposes, the app now displays a static demo using example data.',
+        confirmButtonText: 'Continue'
+      })
+  
+      if (result.isConfirmed) {
+        window.scroll(0, 0)
+        navigate('/results')
+      }
+  
     } catch (error) {
       console.error('Error:', error)
       Swal.fire({
         icon: 'error',
         title: 'ERROR',
-        text: 'There was a problem fetching recommendations. Please ensure that there are no typos, and fill out at least the first song/artist form.',
-      });
+        text: 'Something went wrong. Please try again later.',
+      })
     }
   }
+  
 
   return (
     <div ref={inputRef} className="pt-20">
