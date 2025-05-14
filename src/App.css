@@ -146,6 +146,7 @@ input::placeholder {
 
 .swal2-icon {
   border-color: black !important;
+  color: black !important
 }
 
 .app-container {

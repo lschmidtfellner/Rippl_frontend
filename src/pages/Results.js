@@ -4,14 +4,19 @@ import Marquee from 'react-marquee-slider'
 import ResultsBackground from '../components/ResultsBackground'
 import { gsap } from 'gsap'
 import '../styles/AudioPlayer.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+import placeholderPreviews from '../data/placeholderPreviews.json'
 
-function Results({ recommendations, setRecommendations }) {
+function Results() {
+  // const navigate = useNavigate()
+
+  // Static demo data only
+  const [activeRecs] = useState(placeholderPreviews)
+
   const [currentPlayingIndex, setCurrentPlayingIndex] = useState(null)
   const playerRefs = useRef([])
   const resultRef = useRef([])
   const backgroundRef = useRef(null)
-  const navigate = useNavigate()
 
   const handlePlay = (index) => {
     if (
@@ -25,11 +30,12 @@ function Results({ recommendations, setRecommendations }) {
   }
 
   useEffect(() => {
-    const lines = resultRef.current.children
+    const lines = resultRef.current?.children
 
-    if (recommendations.length === 0) {
-      navigate('/')
-    }
+    // No longer needed since this is now a static demo
+    // if (!recommendations || recommendations.length === 0) {
+    //   navigate('/')
+    // }
 
     gsap.fromTo(
       lines,
@@ -43,7 +49,7 @@ function Results({ recommendations, setRecommendations }) {
         ease: 'power2.out'
       }
     )
-  }, [navigate, recommendations])
+  }, [activeRecs])
 
   useEffect(() => {
     const bg = backgroundRef.current
@@ -62,10 +68,10 @@ function Results({ recommendations, setRecommendations }) {
         <h1 className="font-comba font-extra-bold text-5xl lg:text-8xl mt-8 mb-16">
           HERE <br /> YOU GO!
         </h1>
-        {recommendations.map((item, index) => (
+        {activeRecs.map((item, index) => (
           <div
             className={`preview-container mt-8 font-proxima border-black pb-10 w-full flex justify-center items-center ${
-              index !== recommendations.length - 1 ? 'border-b' : ''
+              index !== activeRecs.length - 1 ? 'border-b' : ''
             }`}
             key={item.spotify_id}
           >
@@ -74,7 +80,7 @@ function Results({ recommendations, setRecommendations }) {
               {item.title.length > 18 ? (
                 <Marquee velocity={12} repeat={2}>
                   {[
-                    <p className="font-bold">
+                    <p className="font-bold" key="title">
                       {item.title}&emsp;~&emsp;{item.title}&emsp;~&emsp;
                     </p>
                   ]}
@@ -85,7 +91,7 @@ function Results({ recommendations, setRecommendations }) {
               {item.artist.length > 18 ? (
                 <Marquee velocity={12} repeat={2}>
                   {[
-                    <p>
+                    <p key="artist">
                       {item.artist}&emsp;~&emsp;{item.artist}&emsp;~&emsp;
                     </p>
                   ]}
