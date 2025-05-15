@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import api from '../api/apiConfig'
 import SongInput from '../components/SongInput'
 import GetRecsBtn from '../components/GetRecsBtn'
 import addBtn from '../assets/rippl_add_btn.svg'
@@ -11,7 +10,6 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css';
 
 function Input({ recommendations, setRecommendations }) {
-  const userId = '6478aa30dee0f9f07836b151'
   const [popularity, setPopularity] = useState(20)
   const [songCount, setSongCount] = useState(1)
   const [song1, setSong1] = useState('')
