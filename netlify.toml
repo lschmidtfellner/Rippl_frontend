@@ -4,5 +4,5 @@
   status = 200
 
 [build]
-  command = "react-scripts build && postcss src/styles/tailwind.css -o src/styles/index.css"
+  command = "CI=false react-scripts build && postcss src/styles/tailwind.css -o src/styles/index.css"
   publish = "build/"
