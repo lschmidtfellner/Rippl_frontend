@@ -92,7 +92,7 @@ function Input({ recommendations, setRecommendations }) {
       const result = await Swal.fire({
         icon: 'info',
         title: 'This is now a demo',
-        text: 'In December of 2024, Spotify changed the perSpotify discontinued public access to its recommendations API in December 2024, which this project originally relied on to generate personalized results. To preserve the experience for portfolio purposes, the app now displays a static demo using example data.',
+        text: 'In December of 2024, Spotify changed discontinued public access to its recommendations API, which this project originally relied on to generate personalized results. To preserve the experience for portfolio purposes, the app now displays a static demo using example data.',
         confirmButtonText: 'Continue'
       })
   
